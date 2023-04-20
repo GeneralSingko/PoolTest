@@ -19,9 +19,15 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(SpawnFX, BulletSpawnpoint.position, BulletSpawnpoint.rotation);
-            var bullet = Instantiate(BulletPrefab, BulletSpawnpoint.position, BulletSpawnpoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = BulletSpawnpoint.forward * BulletSpeed;
+            GameObject BulletPrefab = PoolObject.SharedInstance.GetPooledObject();
+            if (BulletPrefab != null)
+            {
+                BulletPrefab.transform.position = BulletSpawnpoint.transform.position;
+                BulletPrefab.transform.rotation = BulletSpawnpoint.transform.rotation;
+                BulletPrefab.GetComponent<Rigidbody>().velocity =
+                BulletSpawnpoint.forward * BulletSpeed;
+                BulletPrefab.SetActive(true);
+            }
         }
     }
 }
