@@ -8,6 +8,12 @@ public class Gun : MonoBehaviour
     public GameObject BulletPrefab;
     public float BulletSpeed;
     public GameObject SpawnFX;
+    
+    public float lifetime = 2f;
+    private float timer;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +35,10 @@ public class Gun : MonoBehaviour
                 BulletPrefab.SetActive(true);
             }
         }
+
+        /*if (timer >= lifetime)
+        {
+            ObjectPool.Instance.ReturnBullet(gameObject);
+        }*/
     }
 }

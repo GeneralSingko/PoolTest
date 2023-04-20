@@ -478,19 +478,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 821522254}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &821522256
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821522255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &823474965
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +695,7 @@ MonoBehaviour:
     type: 3}
   BulletSpeed: 100
   SpawnFX: {fileID: 5113119360209544926, guid: 7ef8ce6fa7f5801468d7b5439f7cb281, type: 3}
+  lifetime: 2
 --- !u!1 &1118791421
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,9 +709,10 @@ GameObject:
   - component: {fileID: 1118791423}
   - component: {fileID: 1118791422}
   - component: {fileID: 1118791426}
+  - component: {fileID: 1118791427}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,6 +812,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 330585545}
   RotateSpeed: 0
+--- !u!114 &1118791427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118791421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb08b6ce15a7e7458d0621c20bf2842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
 --- !u!1 &1753156910
 GameObject:
   m_ObjectHideFlags: 0

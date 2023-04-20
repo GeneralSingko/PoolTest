@@ -44,14 +44,24 @@ public class PoolObject : MonoBehaviour
 
     void UsePooledObject()
     {
-        GameObject PoolObjects = GetPooledObject();
-        if (PoolObjects != null)
+        GameObject pooledObject = GetPooledObject();
+        if (pooledObject != null)
         {
-            PoolObjects.SetActive(true);
+            pooledObject.SetActive(true);
             // do something with the object
-            PoolObjects.SetActive(false);
+            pooledObject.transform.position = new Vector3(0, 0, 0); // Example: reset object's position
+            pooledObject.GetComponent<PoolObject>(); // Example: call a method on the object's component
+            AddToPool(pooledObject); // Return the object to the pool for later reuse
         }
-
     }
+
+    void AddToPool(GameObject pooledObject)
+    {
+        pooledObject.SetActive(false);
+        // Reset any other necessary object properties
+        // (e.g. set health to full, hide any visual effects, etc.)
+        // before returning the object to the pool.
+    }
+
 
 }
